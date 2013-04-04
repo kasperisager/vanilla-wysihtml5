@@ -3,7 +3,7 @@
 $PluginInfo['Wysihtml5'] = array(
    'Name'         => 'Wysihtml5',
    'Description'  => 'Turns the default text area into an HTML5 editor that generates valid and semantic markup.',
-   'Version'      => '1.0.7',
+   'Version'      => '1.0.8',
    'Author'       => 'Kasper K. Isager',
    'AuthorEmail'  => 'kasperisager@gmail.com',
    'AuthorUrl'    => 'http://github.com/kasperisager',
@@ -14,7 +14,7 @@ $PluginInfo['Wysihtml5'] = array(
  * Wysihtml5 plugin for Vanilla
  *
  * @package    Addons
- * @version    1.0.7
+ * @version    1.0.8
  * @author     Kasper Kronborg Isager <kasperisager@gmail.com>
  * @copyright  Copyright © 2013
  * @license    http://opensource.org/licenses/MIT MIT
@@ -30,7 +30,7 @@ class Wysihtml5 extends Gdn_Plugin
     */
    public function Gdn_Form_BeforeBodyBox_Handler($Sender)
    {
-      $this->_AddWysihtml5($Sender);
+      $this->_AddWysihtml5(Gdn::Controller());
 
       $Format = $Sender->GetValue('Format');
 
