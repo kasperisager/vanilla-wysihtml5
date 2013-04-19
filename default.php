@@ -45,7 +45,7 @@ class Wysihtml5 extends Gdn_Plugin
       }
 
       $Form->SetValue('Format', 'Wysiwyg');
-      echo $Sender->FetchView($this->GetView('toolbar.php'));
+      echo $Sender->FetchView($this->GetView('toolbar'));
    }
 
    /**
