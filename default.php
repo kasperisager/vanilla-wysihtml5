@@ -14,7 +14,7 @@ $PluginInfo['Wysihtml5'] = array(
  * Wysihtml5 plugin for Vanilla
  *
  * @package    Wysihtml5 Plugin
- * @version    1.2.1
+ * @version    1.2.2
  * @author     Kasper Kronborg Isager <kasperisager@gmail.com>
  * @author     Diego Zanella <diego@pathtoenlightenment.net>
  * @copyright  Copyright © 2013
