@@ -3,18 +3,18 @@
 $PluginInfo['Wysihtml5'] = array(
    'Name'         => 'Wysihtml5',
    'Description'  => 'Turns the default text area into an HTML5 editor that generates valid and semantic markup.',
-   'Version'      => '1.2.3',
+   'Version'      => '1.3.0',
    'Author'       => 'Kasper K. Isager',
    'AuthorEmail'  => 'kasperisager@gmail.com',
    'AuthorUrl'    => 'http://github.com/kasperisager',
-   'RequiredApplications' => array('Vanilla' => '2.0.10')
+   'RequiredApplications' => array('Vanilla' => '2.1a')
 );
 
 /**
  * Wysihtml5 plugin for Vanilla
  *
  * @package    Wysihtml5 Plugin
- * @version    1.2.3
+ * @version    1.3.0
  * @author     Kasper Kronborg Isager <kasperisager@gmail.com>
  * @author     Diego Zanella <diego@pathtoenlightenment.net>
  * @copyright  Copyright © 2013
@@ -23,13 +23,24 @@ $PluginInfo['Wysihtml5'] = array(
 class Wysihtml5 extends Gdn_Plugin
 {
    /**
+    * Add the WYSIWYG editor to all text boxes
+    *
+    * @access public
+    */
+   public function Gdn_Form_BeforeBodyBox_Handler()
+   {
+      $this->AttachFormattingBar(Gdn::Controller());
+   }
+
+   /**
     * Adds the formatting bar to the form used by the Controller.
     *
-    * @param Gdn_Controller $Sender Sending Controller instance.
+    * @access  public
+    * @param   Gdn_Controller $Sender
     */
-   private function AttachFormattingBar(Gdn_Controller $Sender)
+   private function AttachFormattingBar($Sender)
    {
-      $this->_AddWysihtml5($Sender);
+      $this->AddWysihtml5($Sender);
 
       $Form = $Sender->Form;
       $Format = $Form->GetValue('Format');
@@ -45,50 +56,16 @@ class Wysihtml5 extends Gdn_Plugin
       }
 
       $Form->SetValue('Format', 'Wysiwyg');
-      echo $Sender->FetchView($this->GetView('toolbar.php'));
-   }
-
-   /**
-    * Vanilla 2.1 only.
-    * Add the WYSIWYG editor to all text boxes
-    *
-    * @param Gdn_Controller $Sender Sending Controller instance.
-    */
-   public function Gdn_Form_BeforeBodyBox_Handler($Sender)
-   {
-      $this->AttachFormattingBar(Gdn::Controller());
-   }
-
-   /**
-    * Vanilla 2.0 only.
-    * Hook DiscussionController::BeforeBodyField Event Handler.
-    * This event fires just before the comment textbox is drawn.
-    *
-    * @param Gdn_Controller $Sender Sending Controller instance.
-    */
-   public function DiscussionController_BeforeBodyField_Handler($Sender)
-   {
-      $this->AttachFormattingBar($Sender);
-   }
-
-   /**
-    * Vanilla 2.0 only.
-    * Hook PostController::BeforeBodyField Event Handler. Vanilla 2.0 only.
-    * This event fires just before the comment textbox is drawn.
-    *
-    * @param Gdn_Controller $Sender Sending Controller instance.
-    */
-   public function PostController_BeforeBodyField_Handler($Sender)
-   {
-      $this->AttachFormattingBar($Sender);
+      echo $Sender->FetchView('toolbar', NULL, 'plugins/Wysihtml5');
    }
 
    /**
     * Add Wysihtml5 resources
-    *
-    * @param Gdn_Controler $Sender
+    * 
+    * @access  private
+    * @param   Gdn_Controler $Sender
     */
-   private function _AddWysihtml5($Sender)
+   private function AddWysihtml5($Sender)
    {
       static $Added = FALSE;
       if ($Added) return;
