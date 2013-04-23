@@ -3,7 +3,7 @@
 $PluginInfo['Wysihtml5'] = array(
    'Name'         => 'Wysihtml5',
    'Description'  => 'Turns the default text area into an HTML5 editor that generates valid and semantic markup.',
-   'Version'      => '1.2.2',
+   'Version'      => '1.2.3',
    'Author'       => 'Kasper K. Isager',
    'AuthorEmail'  => 'kasperisager@gmail.com',
    'AuthorUrl'    => 'http://github.com/kasperisager',
@@ -14,7 +14,7 @@ $PluginInfo['Wysihtml5'] = array(
  * Wysihtml5 plugin for Vanilla
  *
  * @package    Wysihtml5 Plugin
- * @version    1.2.2
+ * @version    1.2.3
  * @author     Kasper Kronborg Isager <kasperisager@gmail.com>
  * @author     Diego Zanella <diego@pathtoenlightenment.net>
  * @copyright  Copyright © 2013
@@ -45,7 +45,7 @@ class Wysihtml5 extends Gdn_Plugin
       }
 
       $Form->SetValue('Format', 'Wysiwyg');
-      echo $Sender->FetchView($this->GetView('toolbar'));
+      echo $Sender->FetchView($this->GetView('toolbar.php'));
    }
 
    /**
