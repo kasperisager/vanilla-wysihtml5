@@ -9,7 +9,7 @@ gulp.task('concat', function () {
     'bower_components/wysihtml5/parser_rules/advanced.js'
 
     // Wysihtml5 library
-  , 'bower_components/wysihtml5/dist/wysihtml5-0.3.0.js'
+  , 'bower_components/wysihtml5/dist/wysihtml5-0.4.0pre.js'
 
     // Editor plugin
   , 'js/editor.js'
