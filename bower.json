@@ -1,0 +1,7 @@
+{
+  "name": "vanilla-wysihtml5",
+  "private": true,
+  "dependencies": {
+    "wysihtml5": "~0.3.0"
+  }
+}
