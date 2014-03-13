@@ -1,37 +1,37 @@
 <div class="editor-toolbar js-editor-toolbar" style="display: none;">
 
   <a data-wysihtml5-command="bold" class="Button" title="CTRL+B">
-    <span class="icon icon-bold"></span>
+    <span>{t c="Bold"}</span> <i class="icon icon-bold"></i>
   </a>
   <a data-wysihtml5-command="italic" class="Button" title="CTRL+I">
-    <span class="icon icon-italic"></span>
+    <span>{t c="Italic"}</span> <i class="icon icon-italic"></i>
   </a>
   <a data-wysihtml5-command="underline" class="Button">
-    <span class="icon icon-underline"></span>
+    <span>{t c="Underline"}</span> <i class="icon icon-underline"></i>
   </a>
   <a data-wysihtml5-command="justifyLeft" class="Button">
-    <span class="icon icon-align-left"></span>
+    <span>{t c="Left"}</span> <i class="icon icon-align-left"></i>
   </a>
   <a data-wysihtml5-command="justifyCenter" class="Button">
-    <span class="icon icon-align-center"></span>
+    <span>{t c="Center"}</span> <i class="icon icon-align-center"></i>
   </a>
   <a data-wysihtml5-command="justifyRight" class="Button">
-    <span class="icon icon-align-right"></span>
+    <span>{t c="Right"}</span> <i class="icon icon-align-right"></i>
   </a>
   <a data-wysihtml5-command="insertUnorderedList" class="Button">
-    <span class="icon icon-list-ul"></span>
+    <span>{t c="Bulleted List"}</span> <i class="icon icon-list-ul"></i>
   </a>
   <a data-wysihtml5-command="insertOrderedList" class="Button">
-    <span class="icon icon-list-ol"></span>
+    <span>{t c="Numbered List"}</span> <i class="icon icon-list-ol"></i>
   </a>
   <a data-wysihtml5-command="createLink" class="Button">
-    <span class="icon icon-link"></span>
+    <span>{t c="Link"}</span> <i class="icon icon-link"></i>
   </a>
   <a data-wysihtml5-command="insertImage" class="Button">
-    <span class="icon icon-picture"></span>
+    <span>{t c="Image"}</span> <i class="icon icon-picture"></i>
   </a>
   <a data-wysihtml5-action="change_view" class="Button">
-    <span class="icon icon-source"></span>
+    <span>{t c="Source"}</span> <i class="icon icon-source"></i>
   </a>
 
   <div data-wysihtml5-dialog="createLink" class="createLink" style="display: none;">
@@ -51,9 +51,9 @@
     <label>
       {t c="Align"}:
       <select data-wysihtml5-dialog-field="className">
-        <option value="">{t c="default"}</option>
-        <option value="wysiwyg-float-left">{t c="left"}</option>
-        <option value="wysiwyg-float-right">{t c="right"}</option>
+        <option value="">{t c="Default"}</option>
+        <option value="wysiwyg-float-left">{t c="Left"}</option>
+        <option value="wysiwyg-float-right">{t c="Right"}</option>
       </select>
     </label>
     <a data-wysihtml5-dialog-action="save" class="Button">{t c="OK"}</a>

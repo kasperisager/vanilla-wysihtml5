@@ -19,7 +19,9 @@
 
     var editor = new wysihtml5.Editor(textarea, {
       toolbar       : $toolbar[0]
+    , parserRules   : wysihtml5ParserRules
     , useLineBreaks : false
+    , stylesheets   : gdn.url('/plugins/wysihtml5/design/editor.css')
     });
 
     // Attach the editor to the textarea
@@ -35,7 +37,10 @@
   };
 
   Editor.prototype.clearEditor = function (textarea) {
+    var editor = $(textarea).data('editor');
 
+    // Clear the contents of the editor
+    editor.clear();
   };
 
   Editor.prototype.clearEditorHandler = function (e) {
