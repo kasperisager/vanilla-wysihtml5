@@ -4,6 +4,7 @@ $PluginInfo['wysihtml5'] = array(
     'Name'        => "Wysihtml5",
     'Description' => "Turns the default text area into an HTML5 editor that generates valid and semantic markup.",
     'Version'     => '2.0.0',
+    'PluginUrl'   => 'https://github.com/kasperisager/vanilla-wysihtml5',
     'Author'      => "Kasper Kronborg Isager",
     'AuthorEmail' => 'kasperisager@gmail.com',
     'AuthorUrl'   => 'https://github.com/kasperisager',
