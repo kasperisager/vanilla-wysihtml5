@@ -37,10 +37,10 @@ class Wysihtml5Plugin extends Gdn_Plugin
         Gdn::controller()->removeJsFile('jquery.autogrow.js');
 
         // Add the assets we need for the editor
-        Gdn::controller()->addJsFile('editor.min.js', 'plugins/wysihtml5');
-        Gdn::controller()->addCssFile('editor.css', 'plugins/wysihtml5');
+        Gdn::controller()->addCssFile($this->getResource('design/editor.css', false, false));
+        Gdn::controller()->addJsFile($this->getResource('js/editor.min.js', false, false));
 
         // Render the formatting toolbar
-        echo Gdn::controller()->fetchView('toolbar', '', 'plugins/wysihtml5');
+        echo Gdn::controller()->fetchView($this->getView('toolbar.tpl'));
     }
 }
