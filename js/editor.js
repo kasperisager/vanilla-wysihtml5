@@ -24,6 +24,16 @@
     , stylesheets   : gdn.url('/plugins/wysihtml5/design/editor.css')
     });
 
+    editor.on('load', function(e) {
+      var iframe = $(editor.composer.iframe)
+        , body   = $('body', iframe.contents());
+
+      // Initialize @mention autocompletion
+      if (gdn.atCompleteInit) {
+        gdn.atCompleteInit(body[0], iframe[0]);
+      }
+    });
+
     // Attach the editor to the textarea
     $textarea.data('editor', editor);
   };
