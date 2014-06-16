@@ -3,7 +3,7 @@ var gulp       = require('gulp')
   , uglify     = require('gulp-uglify')
   , livereload = require('gulp-livereload');
 
-gulp.task('concat', function () {
+gulp.task('scripts', function () {
   gulp.src([
     // Wysihtml5 parser rules
     'bower_components/wysihtml5/parser_rules/advanced.js'
@@ -24,5 +24,5 @@ gulp.task('concat', function () {
 });
 
 gulp.task('watch', function () {
-  gulp.watch(['js/**/*.js', '!js/editor.min.js'], ['concat']);
+  gulp.watch(['js/**/*.js', '!js/editor.min.js'], ['scripts']);
 });
