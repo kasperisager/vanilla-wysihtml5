@@ -21,12 +21,31 @@
       toolbar       : $toolbar[0]
     , parserRules   : wysihtml5ParserRules
     , useLineBreaks : false
-    , stylesheets   : gdn.url('/plugins/wysihtml5/design/editor.css')
+    // this ensures a versioned style gnd.url doesn't
+    , stylesheets   : $('link[href*="Wysihtml5/design/editor.css"]').attr('href') 
     });
 
+    // Attach the editor to the textarea
+    $textarea.data('editor', editor);
+    
+    // quotes compatibility
+    $textarea.on('appendHtml',function(e, data){
+       
+       //ensure citation visible (but will be cleared later)
+       //quote = data.replace("\n","<br>").replace(/<blockquote(.*rel="([^"]+)")[^>]*>(.*)/, '<blockquote$1><author>@$2</author>$3');
+       
+       // format newlines
+       quote = data.replace("\n","<br>")
+       
+       $textarea.data('editor').composer.commands.exec("insertHTML",'<div class="WrapQuote">'+quote+'</div>');
+    });
+    
     editor.on('load', function(e) {
       var iframe = $(editor.composer.iframe)
         , body   = $('body', iframe.contents());
+        
+       // auto resize of editor frame
+       $(iframe).wysihtml5_size_matters();
 
       // Initialize @mention autocompletion
       if (gdn.atCompleteInit) {
@@ -36,6 +55,7 @@
 
     // Attach the editor to the textarea
     $textarea.data('editor', editor);
+
   };
 
   Editor.prototype.attachEditorHandler = function (e) {

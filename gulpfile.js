@@ -10,6 +10,9 @@ gulp.task('scripts', function () {
 
     // Wysihtml5 library
   , 'bower_components/wysihtml5/dist/wysihtml5-0.3.0.js'
+  
+    // auto resize
+  , 'bower_components/wysihtml5_size_matters/jquery.wysihtml5_size_matters.js'
 
     // Editor plugin
   , 'js/editor.js'

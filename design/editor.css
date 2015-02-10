@@ -131,3 +131,11 @@
 .wysiwyg-clear-left {
   clear: left;
 }
+
+.wysihtml5-editor blockquote{
+  padding: 1ex 16px;
+  margin: 1em 0;
+  background: #f3f3f3;
+  background: rgba(0, 0, 0, 0.05);
+  border-left: 4px solid rgba(0, 0, 0, 0.1);
+}
